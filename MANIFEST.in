@@ -1,0 +1,23 @@
+# Cron Builder
+
+[![PyPI](https://img.shields.io/pypi/v/cron-builder.svg)](https://pypi.org/project/cron-builder/)
+[![Python Version](https://img.shields.io/pypi/pyversions/cron-builder.svg)](https://pypi.org/project/cron-builder/)
+[![License](https://img.shields.io/pypi/l/cron-builder.svg)](https://github.com/yourusername/cron-builder/blob/main/LICENSE)
+
+A fluent, type-safe Python library for building and validating cron expressions with an intuitive API.
+
+For full documentation, see the [README](README.md).
+
+## Quick Example
+
+```python
+from cron_builder import CronBuilder, Weekday
+
+# Every day at 9:30 AM
+cron = CronBuilder().at(9, 30)
+print(cron)  # 30 9 * * *
+
+# Weekdays at 2:30 PM
+cron = CronBuilder().at(14, 30).on_weekdays()
+print(cron)  # 30 14 * * 1-5
+```
